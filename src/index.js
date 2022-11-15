@@ -83,13 +83,13 @@ window.addEventListener('scroll', infinityScroll);
 function infinityScroll() {
   const documentRef = document.documentElement.getBoundingClientRect();
   if (
-    totalImg > 500 &&
-    documentRef.bottom < document.documentElement.clientHeight + 300
+    totalImg > response.data.totalHits &&
+    documentRef.bottom < document.documentElement.clientHeight + 10
   ) {
     endGalleryMessageRefs.classList.remove('is-hidden');
     return;
   }
-  if (documentRef.bottom < document.documentElement.clientHeight + 200) {
+  if (documentRef.bottom < document.documentElement.clientHeight + 10) {
     currentPage += 1;
     totalImg += response.data.hits.length;
     renderMarkUp(inputValue);
