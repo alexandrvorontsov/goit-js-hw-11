@@ -56,10 +56,13 @@ async function renderMarkUp(value) {
       );
       return;
     }
-    Notify.success(`Hooray! We found ${response.data.totalHits} images.`);
     renderImage(response.data.hits);
     lightbox.refresh();
     scrollPage();
+    console.log(response.data.totalHits);
+    if (currentPage === 1) {
+      Notify.success(`Hooray! We found ${response.data.totalHits} images.`);
+    }
   } catch (error) {
     console.error(error);
   }
