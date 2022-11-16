@@ -9,7 +9,7 @@ export function crateImageMarkUp({
 }) {
   return `<div class="photo-card">
   <a class='photo-link'  href='${largeImageURL}'>
-     <img  class='gallery-img'src='${webformatURL}' alt='${tags}' loading='lazy' width='auto' hight='auto' />
+     <img  class='gallery-img'src='${webformatURL}' alt='${tags}' loading='lazy' width='400' hight='400' />
     
   </a>
   <div class="info">
