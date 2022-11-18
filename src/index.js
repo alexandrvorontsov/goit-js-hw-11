@@ -36,7 +36,7 @@ function onSubmitSearch(event) {
   totalImg = 40;
 
   // value the form
-  inputValue = event.currentTarget.elements.searchQuery.value.trim();
+  inputValue = event.currentTarget.elements.searchQuery.value;
 
   if (!inputValue) {
     gallery.innerHTML = '';
@@ -59,7 +59,7 @@ async function renderMarkUp(value) {
     renderImage(response.data.hits);
     lightbox.refresh();
     scrollPage();
-    console.log(response.data.totalHits);
+    console.log(totalImg * currentPage);
     if (currentPage === 1) {
       Notify.success(`Hooray! We found ${response.data.totalHits} images.`);
     }
@@ -87,14 +87,14 @@ function infinityScroll() {
   const documentRef = document.documentElement.getBoundingClientRect();
   if (
     totalImg > response.data.totalHits &&
-    documentRef.bottom < document.documentElement.clientHeight + 10
+    documentRef.bottom < document.documentElement.clientHeight
   ) {
     endGalleryMessageRefs.classList.remove('is-hidden');
     return;
   }
   if (documentRef.bottom < document.documentElement.clientHeight) {
     currentPage += 1;
-    totalImg += response.data.hits.length;
+    // totalImg += response.data.hits.length;
     renderMarkUp(inputValue);
     lightbox.refresh();
   }
