@@ -94,7 +94,7 @@ function infinityScroll() {
   }
   if (documentRef.bottom < document.documentElement.clientHeight) {
     currentPage += 1;
-    // totalImg += response.data.hits.length;
+    totalImg += response.data.hits.length;
     renderMarkUp(inputValue);
     lightbox.refresh();
   }
