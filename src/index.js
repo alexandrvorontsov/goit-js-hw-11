@@ -59,7 +59,6 @@ async function renderMarkUp(value) {
     renderImage(response.data.hits);
     lightbox.refresh();
     scrollPage();
-    console.log(totalImg * currentPage);
     if (currentPage === 1) {
       Notify.success(`Hooray! We found ${response.data.totalHits} images.`);
     }
